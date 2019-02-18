@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_GQTwgDNdEem5ksF8eqqPCg" name="Home Automation">
+  <packagedElement xmi:type="uml:Package" xmi:id="_7a_-YDNdEem5ksF8eqqPCg" name="Class View">
+    <packageImport xmi:id="_CuI4ADNiEem5ksF8eqqPCg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_AVHvADNeEem5ksF8eqqPCg" name="domain">
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZTG2kDNeEem5ksF8eqqPCg" name="Device" visibility="public">
+        <ownedComment xmi:id="_rPYO4DNeEem5ksF8eqqPCg" annotatedElement="_ZTG2kDNeEem5ksF8eqqPCg">
+          <body>An electrical device that is controlled by the home automation system.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_lcsekDNeEem5ksF8eqqPCg" name="Schedule" visibility="public">
+        <ownedComment xmi:id="_tHtCcDNeEem5ksF8eqqPCg" annotatedElement="_lcsekDNeEem5ksF8eqqPCg">
+          <body>A collection of timed events.</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_BxoB4DNhEem5ksF8eqqPCg" name="name" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_W6bLIDNiEem5ksF8eqqPCg" name="enabled" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CqJ6cDNjEem5ksF8eqqPCg" value="1"/>
+          <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_SExOUDNjEem5ksF8eqqPCg" value="true"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_cPcvEDNiEem5ksF8eqqPCg" name="device" type="_ZTG2kDNeEem5ksF8eqqPCg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_tOlGgDNeEem5ksF8eqqPCg" name="Timed event" visibility="public">
+        <ownedComment xmi:id="_vXWJ0DNeEem5ksF8eqqPCg" annotatedElement="_tOlGgDNeEem5ksF8eqqPCg">
+          <body>Something that happens at a point in time.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_6IFIgDNeEem5ksF8eqqPCg" name="applies to" memberEnd="_6IFIgTNeEem5ksF8eqqPCg _6IFIhDNeEem5ksF8eqqPCg" navigableOwnedEnd="_6IFIgTNeEem5ksF8eqqPCg _6IFIhDNeEem5ksF8eqqPCg">
+        <ownedEnd xmi:id="_6IFIgTNeEem5ksF8eqqPCg" name="devices" type="_ZTG2kDNeEem5ksF8eqqPCg" association="_6IFIgDNeEem5ksF8eqqPCg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6IFIgjNeEem5ksF8eqqPCg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6IFIgzNeEem5ksF8eqqPCg" value="*"/>
+        </ownedEnd>
+        <ownedEnd xmi:id="_6IFIhDNeEem5ksF8eqqPCg" name="schedules" type="_lcsekDNeEem5ksF8eqqPCg" association="_6IFIgDNeEem5ksF8eqqPCg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6IFIhTNeEem5ksF8eqqPCg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6IFIhjNeEem5ksF8eqqPCg" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_E3t7ADNfEem5ksF8eqqPCg" name="belongs to" memberEnd="_E3t7ATNfEem5ksF8eqqPCg _E3t7BDNfEem5ksF8eqqPCg" navigableOwnedEnd="_E3t7ATNfEem5ksF8eqqPCg _E3t7BDNfEem5ksF8eqqPCg">
+        <ownedEnd xmi:id="_E3t7ATNfEem5ksF8eqqPCg" name="timed events" type="_tOlGgDNeEem5ksF8eqqPCg" association="_E3t7ADNfEem5ksF8eqqPCg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_E3t7AjNfEem5ksF8eqqPCg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_E3t7AzNfEem5ksF8eqqPCg" value="*"/>
+        </ownedEnd>
+        <ownedEnd xmi:id="_E3t7BDNfEem5ksF8eqqPCg" name="schedules" type="_lcsekDNeEem5ksF8eqqPCg" association="_E3t7ADNfEem5ksF8eqqPCg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_E3t7BTNfEem5ksF8eqqPCg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_E3t7BjNfEem5ksF8eqqPCg" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_atBk8DNgEem5ksF8eqqPCg" name="TriggerList" visibility="public">
+        <ownedComment xmi:id="_eTR58DNgEem5ksF8eqqPCg" annotatedElement="_atBk8DNgEem5ksF8eqqPCg">
+          <body>A collection of triggered events.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_eaptQDNgEem5ksF8eqqPCg" name="TriggeredEvent" visibility="public">
+        <ownedComment xmi:id="_iMbVwDNgEem5ksF8eqqPCg" annotatedElement="_eaptQDNgEem5ksF8eqqPCg">
+          <body>An event that is triggered by changes in sensor measurements.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_iyugwDNgEem5ksF8eqqPCg" name="Sensor" visibility="public">
+        <ownedComment xmi:id="_kjn2oDNgEem5ksF8eqqPCg" annotatedElement="_iyugwDNgEem5ksF8eqqPCg">
+          <body>A sensor that measures aspects of the environment.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_nRSWwDNgEem5ksF8eqqPCg" name="belongs to" memberEnd="_nRSWwTNgEem5ksF8eqqPCg _nRSWxDNgEem5ksF8eqqPCg" navigableOwnedEnd="_nRSWwTNgEem5ksF8eqqPCg _nRSWxDNgEem5ksF8eqqPCg">
+        <ownedEnd xmi:id="_nRSWwTNgEem5ksF8eqqPCg" name="triggeredEvents" type="_eaptQDNgEem5ksF8eqqPCg" association="_nRSWwDNgEem5ksF8eqqPCg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nRSWwjNgEem5ksF8eqqPCg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nRSWwzNgEem5ksF8eqqPCg" value="*"/>
+        </ownedEnd>
+        <ownedEnd xmi:id="_nRSWxDNgEem5ksF8eqqPCg" name="triggerLists" type="_atBk8DNgEem5ksF8eqqPCg" association="_nRSWwDNgEem5ksF8eqqPCg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nRSWxTNgEem5ksF8eqqPCg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nRSWxjNgEem5ksF8eqqPCg" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_p7470DNgEem5ksF8eqqPCg" name="applies to" memberEnd="_p7470TNgEem5ksF8eqqPCg _p7471DNgEem5ksF8eqqPCg" navigableOwnedEnd="_p7470TNgEem5ksF8eqqPCg _p7471DNgEem5ksF8eqqPCg">
+        <ownedEnd xmi:id="_p7470TNgEem5ksF8eqqPCg" name="triggerLists" type="_atBk8DNgEem5ksF8eqqPCg" association="_p7470DNgEem5ksF8eqqPCg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_p7470jNgEem5ksF8eqqPCg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_p7470zNgEem5ksF8eqqPCg" value="*"/>
+        </ownedEnd>
+        <ownedEnd xmi:id="_p7471DNgEem5ksF8eqqPCg" name="devices" type="_ZTG2kDNeEem5ksF8eqqPCg" association="_p7470DNgEem5ksF8eqqPCg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_p7471TNgEem5ksF8eqqPCg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_p7471jNgEem5ksF8eqqPCg" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_rxBRcDNgEem5ksF8eqqPCg" name="triggers" memberEnd="_rxBRcTNgEem5ksF8eqqPCg _rxBRdDNgEem5ksF8eqqPCg" navigableOwnedEnd="_rxBRcTNgEem5ksF8eqqPCg _rxBRdDNgEem5ksF8eqqPCg">
+        <ownedEnd xmi:id="_rxBRcTNgEem5ksF8eqqPCg" name="sensors" type="_iyugwDNgEem5ksF8eqqPCg" association="_rxBRcDNgEem5ksF8eqqPCg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rxBRcjNgEem5ksF8eqqPCg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rxBRczNgEem5ksF8eqqPCg" value="*"/>
+        </ownedEnd>
+        <ownedEnd xmi:id="_rxBRdDNgEem5ksF8eqqPCg" name="triggeredEvents" type="_eaptQDNgEem5ksF8eqqPCg" association="_rxBRcDNgEem5ksF8eqqPCg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rxBRdTNgEem5ksF8eqqPCg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rxBRdjNgEem5ksF8eqqPCg" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>
